@@ -109,7 +109,7 @@ function problem4() {
     }
   }
   if(cnt1 === cnt2) {
-    output.innerHTML = "Yes," + " You have the same # of positive and negative numbers in each set"; 
+    output.innerHTML = "Yes" + " You have the same # of positive and negative numbers in each set"; 
   }else{
     output.innerHTML = "No," + " You don't have the same # of positive and negative numbers in each set";
   }
@@ -169,6 +169,7 @@ function problem6() {
     for (let i = 0; i <= digits.length; i++) {  //iterates until the length of the string
       if (digits[i] === '7') { //if it is strictly a string that has 7 the conidition will be true
           flag = true;
+          break;  //ends loop as soon as a 7 is found
       }
     }
     return flag;
