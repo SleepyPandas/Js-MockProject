@@ -85,4 +85,71 @@ a {
     text-decoration: none; /* Underline from Plushies home about us */
 }
 
+footer {
+    /* --- Layout --- */
+    
+    display: flex;
+    width: 379px;
+    height: 30px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+
+    /* --- Typography --- */
+    
+    color: #000;
+    font-family: Patrick Hand SC;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10%; /* 2px */
+
+
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.text {
+    /* --- Layout --- */
+    border: 2px solid tomato;
+    text-align: justify;
+    display: flex;
+    width: 482px;
+    height: 208px;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-left: 127px; /* Move the text to the right */
+    margin-top: 100px;
+    text-wrap: wrap;
+
+
+
+    /* --- Typography --- */
+    
+    color: #000;
+    font-family: Patrick Hand SC;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+
+}
+#mascot {
+    /* --- Layout --- */
+    float: right;
+    width: 524px;
+    height: 524px;
+    margin-top: -225px;   /* change to a better method */
+
+    /* --- Style --- */
+
+    border: 2px solid #FFEF9F;
+}
+
+
+
 
