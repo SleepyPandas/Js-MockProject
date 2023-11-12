@@ -185,3 +185,20 @@ footer {
     text-align: center;
     padding: 50px 5% 50px 5%;
 }
+
+#search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Set the background color to white */
+    border: 1px solid #ccc; /* Add a border for a box effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle elevation */
+    max-height: 200px; /* Set a max height for overflow */
+    display: none; /* Hide initially */
+    text-align: center; /* Center the content */
+}
+
+.search-box + #search-results {
+    display: block;
+}
