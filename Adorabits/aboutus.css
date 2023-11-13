@@ -97,19 +97,6 @@ body {
     border: none;
 }
 
-/* Need more time
-.submenu a {
-    text-decoration: none;
-    color: white;
-    font-size: 10px;
-    font-family: GJ-B, sans-serif;
-}
-
-
-.menu:hover .submenu {
-    display: block;
-}
-*/
 
 .search-bar-container {
     position: sticky;
@@ -169,6 +156,8 @@ body {
     padding: 50px 5% 50px 5%;
     justify-content: center;
     box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
 }
 
 #home-text {
@@ -176,10 +165,6 @@ body {
     height: auto;
 }
 
-#mascot {
-    width: auto;
-    height: auto;
-}
 
 footer {
     text-align: center;
@@ -203,3 +188,18 @@ footer {
     display: block;
 }
 
+
+#plushies {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(165, 62, 62, 0.164); /* Add a box shadow for a subtle elevation */
+
+    background-color: #FFEF9F;
+    transition: all ease 0.1s;
+}
+#plushies:active {
+    box-shadow: 0 0px 10px #ffee02;
+
+}

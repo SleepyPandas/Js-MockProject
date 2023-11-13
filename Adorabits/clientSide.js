@@ -30,27 +30,7 @@ const people = [                // This is just a array of Data for testing
 ]
 
 
-/*   
-function search_bar() {
-    const searchInput = document.querySelector('.search-box');
-    const searchResultsContainer = document.getElementById('search-results');
-    const searchTerm = searchInput.value.toLowerCase();
-  
-    // Clear previous search results
-    searchResultsContainer.innerHTML = '';
-  
-    // Filter K-pop groups based on the search term
-    const results = people.filter(group => group.name.toLowerCase().includes(searchTerm));
-  
-    // Display the search results
-    results.forEach(result => {
-      const resultItem = document.createElement('div');
-      resultItem.textContent = result.name;
-      searchResultsContainer.appendChild(resultItem);
-    });
-    
-}
-*/
+
 function search_bar() {
     const userInput = document.querySelector('.search-box');
     const searchResults = document.getElementById('search-results');
@@ -69,7 +49,7 @@ function search_bar() {
 
 
 function filter() {
-
+  //on click show 
 }
 
 function shoppint_cart() {
