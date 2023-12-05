@@ -1,0 +1,36 @@
+#item1 {
+    width: 500px;
+    height: 500px;
+}
+
+.shop-items {
+
+}
+
+.shop-item-image {
+    width: 25vh;
+    height: 25vh;
+}
+
+
+.Title {
+    margin: 30px;
+}
+
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
