@@ -4,63 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>THE PROJECT WITH PLUSHIES</title>
-    <link rel="stylesheet" type="text/css" href="adorabitsCss.css">
+    <title>HOME - THE PROJECT WITH PLUSHIES</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
     <link rel="icon" href="Logo/favicon.ico" type="image/x-icon">
-    <script src="clientSide.js"></script>
+    <script src="clientSide.js" defer></script>
   </head>
  
   <body>
   <div class="container">
     <!-- Header, Navigator -->
-    <div class="header">
-      <img class="logo" src="Logo/logo.png" alt="Adorabits"> 
+    <div class="home-header">
+      <a href="Home.html"><img class="logo" src="Logo/logo.png" alt="Adorabits"></a> 
         <ul class="menu">
           <li><a href="Home.html"> Home </a></li>
           <li><a href="plushies.html">Plushies</a>
           <li><a href="about.html"> About Us </a></li>
-          <!-- Need more time <ul class="submenu">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-            </ul> -->
         </li>
           
         </ul>
     </div>  
 
-    <!-- Search bar, Shopping cart-->
+    <!-- Search bar, Shopping cart -->
     <div class="search-bar-container">
      <div class="search-bar">
       <div class="menu-button"><img id="menu-logo" src="Logo/logo-face.png" alt="Menu"></div>
       <input type="text" class="search-box" placeholder="Search your cuties..." oninput="search_bar()">
       <div id="search-results"></div>
       <button class="search-button">&#128269;</button>
-      <button class="cart-button">&#128722;</button>
+      <button class="cart-button"><a href="cartview.html">&#128722;</a></button>
      </div>
     </div>
 
-    <!-- Content (Still working)-->
+    <!-- Content for Home -->
     <div id="content">
-      <p id="home-text">
-              looking for eiorjgierjg
-              gdfgdfgedrg drgdfg
-              gdgfg rgerjWI KKKHh
-              hfghfg?? ??? !!!!!
-      </p>
-      <img id="mascot" src="Images/duck.png" alt="Plush duck with a red scarf">
+     <div id="text-column">
+       <h1>Welcome to AdoraBits!</h1>
+       <p>Our journey began with a simple yet profound love for soft, cuddly toys that bring joy and comfort to people of all ages.</p>
+     </div>
+     <div id="image-column">
+       <img id="mascot" src="Images/duck.png" alt="Plush duck with a red scarf">
+     </div>
     </div>
 
     <!-- Footer-->
     <footer>
-      <div class="footer-bar">
-      intro, 
-      </div>
-      <p> &copy; 2023 Adorabits </p>
-    </footer>
-        
-
-
+      <p>Website security is protected by Cloudflare (Coming Soon) <br>
+      &copy; 2023 Adorabits by Kimchi Companions</p>
+    </footer>   
+    
+     <button id="backToTop" onclick="scrollToTop()">&#x21E7;</button>
 	</div>
   </body>
 

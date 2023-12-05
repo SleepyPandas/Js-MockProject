@@ -4,40 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>THE PROJECT WITH PLUSHIES</title>
-    <link rel="stylesheet" type="text/css" href="adorabitsCss.css">
+    <title>PLUSHIES - THE PROJECT WITH PLUSHIES</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
     <link rel="icon" href="Logo/favicon.ico" type="image/x-icon">
-    <script src="clientSide.js"></script>
+    <script src="clientSide.js" defer></script>
+    <!-- defer is used to load the script in the background(in Parallel) and only run when DOM is state Ready  -->
+    <!-- Later I also implement another check to see if the DOM state is ready  -->
   </head>
  
   <body>
   <div class="container">
     <!-- Header, Navigator -->
     <div class="header">
-      <img class="logo" src="Logo/logo.png" alt="Adorabits"> 
+      <a href="Home.html"><img class="logo" src="Logo/logo.png" alt="Adorabits"></a>  
         <ul class="menu">
           <li><a href="Home.html"> Home </a></li>
-          <li><a href="plushies.html">Plushies</a>
+          <li><a href="plushies.html" id="plushies">Plushies</a>
           <li><a href="about.html"> About Us </a></li>
-          <!-- Need more time <ul class="submenu">
-                <li><a href="#">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-            </ul> -->
         </li>
         </ul>
     </div>  
+
+    <!-- Search bar, Shopping cart -->
+    <div class="search-bar-container">
+     <div class="search-bar">
+      <div class="menu-button"><img id="menu-logo" src="Logo/logo-face.png" alt="Menu"></div>
+      <input type="text" class="search-box" placeholder="Search your cuties..." oninput="search_bar()">
+      <div id="search-results"></div>
+      <button class="search-button">&#128269;</button>
+      <button class="cart-button" type="button"><a href="cartview.html">&#128722;</a></button>
+     </div>
+    </div>
+
+    <!-- Content for Plushies -->
+    <div id="content" class="single-column">
+      <div><h1>Plushies</h1><br>
+      <p>Plushies, the embodiment of warmth and comfort, are more than just soft toys; they are cherished companions that bring joy and solace to hearts of all ages. Each plushie, lovingly crafted with plush fabrics and gentle stuffing, captures a unique character and charm. Whether nestled in cozy corners of children's rooms or adorning workspaces as a reminder of playful innocence, these cuddly creations hold a special place in our lives.</p>
+      </div><br>
+
+      <div class="product-grid">
+      <!-- Product 01 -->
+        <div class="product-card">
+          <img src="Images/duck.png" alt="Plush duck with a red scarf" class="product-image">
+          <h3 class="product-name">OG Yellow Duck</h3>
+          <p>Category: <span class="category" id="cate1">Stuffed Animals</span></p>
+          <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+          <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+          <h2><span class="product-price">$10</span></h2>
+          <button class="add-to-cart" id="product-Duck" type="button">Add to Cart</button>
+        </div>
+        <!-- Product 02 -->
+        <div class="product-card">
+          <img src="Images/Banana Duck.jpg" alt="Plush duck with a red scarf" class="product-image">
+          <h3 class="product-name">Banana Duck</h3>
+          <p>Category: <span class="category" id="cate1">Stuffed Animals</span></p>
+          <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+          <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+          <h2><span class="price">$15</span></h2>
+          <button class="add-to-cart" id="productBananaDuck" type="button">Add to Cart</button>
+        </div>
+        <!-- Product 03 -->
+        <div class="product-card">
+          <img src="Images/Black Cat.jpg" alt="Plush duck with a red scarf" class="product-image">
+          <h3 class="product-name">Black Cat</h3>
+          <p>Category: <span class="category" id="cate1">Stuffed Animals</span></p>
+          <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+          <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+          <h2><span class="price">$15</span></h2>
+          <button class="add-to-cart" id="productBlackCat" type="button">Add to Cart</button>
+        </div>
+        <!-- Product 04 -->
+        <div class="product-card">
+          <img src="Images/Baby Penguin.jpg" alt="Plush duck with a red scarf" class="product-image">
+          <h3 class="product-name">Baby Penguin</h3>
+          <p>Category: <span class="category" id="cate2">Stuffed Animals</span></p>
+          <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+          <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+          <h2><span class="price">$10</span></h2>
+          <button class="add-to-cart" id="productBabyPenguin" type="button">Add to Cart</button>
+        </div>
+        <!-- Product 05 -->
+        <div class="product-card">
+        <img src="Images/Creamy Avocado.png" alt="Plush duck with a red scarf" class="product-image">
+        <h3 class="product-name">Creamy Avocado</h3>
+        <p>Category: <span class="category" id="cate2">Stuffed Animals</span></p>
+        <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+        <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+        <h2><span class="price">$15</span></h2>
+        <button class="add-to-cart" id="productCreamyAvocado" type="button">Add to Cart</button>
+        </div>
+        <!-- Product 06 -->
+        <div class="product-card">
+          <img src="Images/Octopus Thing.jpg" alt="Plush duck with a red scarf" class="product-image">
+          <h3 class="product-name">Octopus Thing</h3>
+          <p>Category: <span class="category" id="cate2">Stuffed Animals</span></p>
+          <p>Size: <span class="size" id="size1">Cat</span> or <span class="size" id="size2">Dog</span></p>
+          <!-- <p>Stock Status: <span class="stock"> 999 </span></p> -->
+          <h2><span class="price">$20</span></h2>
+          <button class="add-to-cart" id="productOctopusThing" type="button">Add to Cart</button>
+          </div>
+        </div>
+
+    </div>
+
     <!-- Footer-->
     <footer>
-        <div class="footer-bar">
-        intro, 
-        </div>
-        <p> &copy; 2023 Adorabits </p>
-      </footer>
-          
+     <p>Website security is protected by Cloudflare (Coming Soon) <br>
+     &copy; 2023 Adorabits by Kimchi Companions</p>
+    </footer>
   
-  
-      </div>
-    </body>
-  
-  </html>
+     <button id="backToTop" onclick="scrollToTop()">&#x21E7;</button>
+	</div>
+  </body>
+
+</html>
