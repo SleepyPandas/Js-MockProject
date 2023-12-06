@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ABOUT - THE PROJECT WITH PLUSHIES</title>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <link rel="icon" href="Logo/favicon.ico" type="image/x-icon">
+    <script src="clientSide.js" defer></script>
+  </head>
+  <body>
+  <div class="container">
+    <!-- Header, Navigator -->
+    <div class="header">
+      <a href="Home.html"><img class="logo" src="Logo/logo.png" alt="Adorabits"></a>  
+        <ul class="menu">
+          <li><a href="Home.html"> Home </a></li>
+          <li><a href="plushies.html">Plushies</a>
+          <li><a href="about.html"> About Us </a></li>
+        </li>
+          
+        </ul>
+    </div>  
+    <!-- Search bar, Shopping cart -->
+    <div class="search-bar-container">
+     <div class="search-bar">
+      <div class="menu-button"><a href="Home.html"><img id="menu-logo" src="Logo/logo-face.png" alt="Menu"></div></a>
+      <input type="text" class="search-box" placeholder="Search your cuties..." oninput="search_bar()" onclick="search_bar()">
+      <div id="search-results"></div>
+      <button class="search-button">&#128269;</button>
+      <button class="cart-button"><a href="cartview.html">&#128722;</a></button>
+     </div>
+    </div>
+    <!-- Content for About -->
+    <div id="content" class="single-column">
+     <div>
+       <h1>About Us</h1><br>
+       <p>Adorabits, an E-commerce Website, which is a Team Project for EECS 1012 - Fall 2023 - Section B - Lab 1.</p><br>
+       <h3>Team Members</h3>
+       <p>Anthony Hua - 220019311 - anthon@my.yorku.ca - Section B - Lab 1.<br>
+          Xuyanhan Chen - 220876868 - kokychan@my.yorku.ca - Section B - Lab 1</p><br>
+       <h3>Project Description</h3>
+       <p>The idea of this project is to simulate an e-commerce environment using JS, CSS and HTML. There are many avenues from a development standpoint that we can work towards. But the focus of this project will be providing or simulating a storefront from a consumer perspective, this means having a responsive and intuitive website, that is not only graphically appealing but is functionally sufficient for a given target audience. <br><br>
+          Included may be features such as product listing, simulating cart functionality and its associated “checkout page” perhaps a search functionality, and a product catalogue among other features. However, as we get a deeper grasp of web development we can deliberate and consolidate a list of realistic functions in the timeframe given and that aligns with our individual and collaborative ability.</p><br><br>
+       <h3>Some Features (adjusted for no server side) </h3>
+       <p> 
+           There is a filter option, to filter via price, color, and other common attributes.<br>
+           Shopping Cart functionality displaying Total price, and allowing a “queue of products” with
+           fluid switching between pages while retaining shopping cart memory .<br>
+           Simulate checkout functionality updating the cart in real time<br><br>
+      </div><br><br>
+       <img id="mascot" src="Images/duck.png" alt="Plush duck with a red scarf">
+    </div>
+    <!-- Footer-->
+    <footer>
+      <p>Website security is protected by Cloudflare (Coming Soon) <br>
+      &copy; 2023 Adorabits by Kimchi Companions</p>
+    </footer>
+     <button id="backToTop" onclick="scrollToTop()">&#x21E7;</button>
+	</div>
+  </body>
+</html>
