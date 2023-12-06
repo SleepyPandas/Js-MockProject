@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HOME - THE PROJECT WITH PLUSHIES</title>
+  <link rel="stylesheet" type="text/css" href="Styles.css">
+  <link rel="icon" href="Logo/favicon.ico" type="image/x-icon">
+  <script src="clientSide.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Header, Navigator -->
+    <div class="home-header">
+      <a href="Home.html"><img class="logo" src="Logo/logo.png" alt="Adorabits"></a>
+      <ul class="menu">
+        <li><a href="Home.html"> Home </a></li>
+        <li><a href="plushies.html">Plushies</a>
+        <li><a href="about.html"> About Us </a></li>
+        </li>
+      </ul>
+    </div>
+    <!-- Search bar, Shopping cart -->
+    <div class="search-bar-container">
+      <div class="search-bar">
+        <div class="menu-button"><img id="menu-logo" src="Logo/logo-face.png" alt="Menu"></div>
+        <input type="text" class="search-box" placeholder="Search your cuties..." oninput="search_bar()"
+          onclick="search_bar()">
+        <div id="search-results"></div>
+        <div id="search-results-1"></div>
+        <div id="search-results-2"></div>
+        <button class="search-button">&#128269;</button>
+        <button class="cart-button"><a href="cartview.html">&#128722;</a></button>
+      </div>
+    </div>
+
+    <!-- Content for Home -->
+    <div id="content">
+      <div id="text-column">
+        <h1>Welcome to AdoraBits!</h1>
+        <p id="line-spacing">Welcome to Adorabits, where cuteness knows no bounds! 🌟
+          Step into a world of irresistible charm and snugly delights as we
+          proudly present our collection of Adorabits plushies. At Adorabits,
+          we've made it our mission to infuse every huggable friend with an abundance of sweetness and endearing
+          personality.
+          From whimsical creatures to classic cuddle companions, each Adorabits plushie is a bundle of joy waiting to
+          brighten your day.
+          Explore our enchanting realm of softness, where every stitch is a testament to the art of cuddle
+          craftsmanship.
+          Join us in celebrating the magic of adorable moments at Adorabits - because happiness is found in the
+          littlest, fluffiest things! 🧁🧸</p>
+        <div class="homeButtons">
+          <button id="about-us-home" class="checkout" type="button"><a href="about.html">About Us</a></button>
+          <button id="plushies-home" class="checkout" type="button"><a href="plushies.html">Plushies!!!</a></button>
+        </div>
+      </div>
+      <div id="image-column">
+        <img id="mascot" src="Images/duck.png" alt="Plush duck with a red scarf">
+      </div>
+    </div>
+    <!-- Footer-->
+    <footer>
+      <p>Website security is protected by Cloudflare (Coming Soon) <br>
+        &copy; 2023 Adorabits by Kimchi Companions</p>
+    </footer>
+    <button id="backToTop" onclick="scrollToTop()">&#x21E7;</button>
+  </div>
+</body>
+
+</html>
