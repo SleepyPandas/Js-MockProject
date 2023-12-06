@@ -1,11 +1,11 @@
 /* this code is specifically to ensure that the DOM is loaded (1)
    and this code also only calls the related functions neeeded for the page(2)*/
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
     if (document.URL.includes("cartview.html")) {
       // Code for cartview.html
       ready();
-      goBack()
+      goBack();
     } else if (document.URL.includes("plushies.html")) {
       // Code for plushies.html
       plushiestore();
@@ -25,9 +25,22 @@ if (document.readyState === 'loading') {
   }
 }
 
+//This code only runs when it is at the home page
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.URL.includes("Home.html")) {
+      homePageButtons();
+    }
+  });
+}
+if (document.URL.includes("Home.html")) {
+  homePageButtons();
+} 
+
+
 
 //go Back function prevents user from losing saved cart items
-
 
 function goBack() {
   const checkout = document.getElementsByClassName("cart-button")[0] 
@@ -39,14 +52,11 @@ function goBack() {
   });
 }
 
-
-
-
 //this code is for the shopping cart functionality
 
 function ready() {
 
-  const userData = JSON.parse(localStorage.getItem("sequence"));
+  var userData = JSON.parse(localStorage.getItem("sequence"));
   
   console.log(userData)
 
@@ -95,15 +105,21 @@ function ready() {
 
   //for DEBUGGING
 
-  /* let imageSrc = "Images/Octopus Thing.jpg"; 
+  /*let imageSrc = "Images/Octopus Thing.jpg"; 
   let title = "Octopus Thing"; 
   let price = "$20";
-  cartRowContents(imageSrc, title, price) */
+  cartRowContents(imageSrc, title, price) */ 
 
+
+  
   var removeItemFromCart = document.getElementsByClassName("remove-item-from-cart")
   for (var i = 0; i < removeItemFromCart.length; i++) {
     var button = removeItemFromCart[i]
-    button.addEventListener("click", removeItem) 
+    button.addEventListener("click", (event) => {
+      getProductTitle(event)
+    });  
+    button.addEventListener("click", removeItem)
+    
   }
 
   var cart_quantity = document.getElementsByClassName("cart-quantity-input")
@@ -114,8 +130,24 @@ function ready() {
 
   let payment = document.getElementsByClassName("checkout")[0]
   payment.addEventListener("click", finishPayment)
-  
+
+  function getProductTitle(event) {
+    let removeButton = event.target;
+    //extracts the entire stack of elements creates temp div to extract title
+    let data = removeButton.parentElement.parentElement.innerHTML;
+    let tempContainer = document.createElement("div");
+    tempContainer.innerHTML = data;
+    let elementTitle = tempContainer.getElementsByClassName("cart-item-title")[0];
+    let titleText = elementTitle.innerText.replace(/\s/g, '');
+    userData = userData.filter(item => item !== titleText)
+    let sequence = userData;
+    //overwrites previous storage
+    window.localStorage.setItem("sequence", JSON.stringify(sequence));
+  }
 }
+
+
+//will replace with appropriate data.
 
 function cartRowContents(imageSrc, title, price) {
   var cartRow = document.createElement("div")
@@ -136,6 +168,8 @@ function cartRowContents(imageSrc, title, price) {
   updateCartTotal();
 
 }
+
+//function updateArray
 
 function removeItem(event) {
   let buttonClicked = event.target
@@ -178,14 +212,32 @@ function updateCartTotal() {
 }
 
 
+//This adds functionality to the plushies section allowing users to add items to card
+
 function plushiestore() {
 
   //maintains local storage through both pages
-  const sequence = JSON.parse(localStorage.getItem("sequence"));
+
+  var sequence = JSON.parse(localStorage.getItem("sequence"));
+
+  if (sequence == null) {
+    sequence = [];
+  }
+
+  // this fix did not work :( :skull:
+
+ /* if (sequence === null || [] ) {
+    sequence = [];
+  } else {
+    sequence = JSON.parse(localStorage.getItem("sequence"));
+  }
+  */
+
 console.log(sequence)
 
-  
+  //there are more efficient ways to do this but, it adds an item to the cart when it is clicked
 
+  
   let productDuck = document.getElementById("product-Duck")
   productDuck.addEventListener("click", () => {
     alert("product Duck added to cart")
@@ -205,7 +257,6 @@ console.log(sequence)
     alert("product BlackCat added to cart")
     sequence.push("BlackCat")
     console.log(sequence)
-
   })
 
   let productBabyPenguin = document.getElementById("productBabyPenguin")
@@ -213,7 +264,6 @@ console.log(sequence)
     alert("product BabyPenguin added to cart")
     sequence.push("BabyPenguin")
     console.log(sequence)
-
   })
 
   let productCreamyAvocado = document.getElementById("productCreamyAvocado")
@@ -245,56 +295,79 @@ this is done using local storage which is cleared after the transaction is compl
   })
 }
 
+//below here is for the search bar and elements related to page redirects 
 
-
-const people = [                // This is just a array of Data for testing
-  { name: "BTS (방탄소년단)" },
-  { name: "EXO (엑소)" },
-  { name: "BIGBANG (빅뱅)" },
-  { name: "GOT7 (갓세븐)" },
-  { name: "NCT (엔시티)" },
-  { name: "SEVENTEEN (세븐틴)" },
-  { name: "MONSTA X (몬스타엑스)" },
-  { name: "SHINee (샤이니)" },
-  { name: "Super Junior (슈퍼주니어)" },
-  { name: "Stray Kids (스트레이 키즈)" },
-  { name: "ATEEZ (에이티즈)" },
-  { name: "TXT (투모로우바이투게더)" },
-  { name: "iKON (아이콘)" },
-  { name: "DAY6 (데이식스)" },
-  { name: "SF9 (에스에프나인)" },
-  { name: "WINNER (위너)" },
-  { name: "Pentagon (펜타곤)" },
-  { name: "VIXX (빅스)" },
-  { name: "INFINITE (인피니트)" },
-  { name: "ASTRO (아스트로)" },
-  { name: "BTOB (비투비)" },
-  { name: "NU'EST (뉴이스트)" },
-  { name: "AB6IX (에이비식스)" },
-  { name: "ONEUS (원어스)" },
-  { name: "CIX (씨아이엑스)" },
+const plushies = [                // This is just a array of Data for testing
+  { name: "OG Yellow Duck" },
+  { name: "Banana Duck" },
+  { name: "Black Cat" },
+  { name: "BabyPenguin" },
+  { name: "Creamy Avocado" },
+  { name: "Octopus Thing" },
   { name: "ENHYPEN (엔하이픈)" },
-  { name: "VERIVERY (베리베리)" },
   { name: "TOMORROW X TOGETHER (투모로우바이투게더)" },
+  { name: "Large"},
+  { name: "Small"},
 ]
-function search_bar() {
-    const userInput = document.querySelector('.search-box');
-    const searchResults = document.getElementById('search-results');
-    const searchTerm = userInput.value.toLowerCase();
-    
-    searchResults.innerHTML = '';
 
-    const results = people.filter(group => group.name.toLowerCase().includes(searchTerm));
+
+function search_bar() {
+    const userInput = document.querySelector(".search-box");
+    const searchResults = document.getElementById("search-results");
+   // const searchResults1 = document.getElementById("search-results-1");
+    const searchTerm = userInput.value.toLowerCase();
+  
+    searchResults.innerHTML = "";
+
+
+    const results = plushies.filter(group => group.name.toLowerCase().includes(searchTerm));
     
-    results.forEach(result => {
-        const resultItem = document.getElementById('search-results');
-        resultItem.textContent = result.name;
-        searchResults.appendChild(resultItem);
+      results.forEach(result => {
+          const resultItem = document.getElementById("search-results");
+          resultItem.textContent = result.name;
+          searchResults.appendChild(resultItem);
     });
+
+} 
+
+//Event listeners Related to Search Bar eg eyeglass 
+//when dropdown menu is clicked etc These are "global"
+
+
+
+const redirectPlushiesPage = document.getElementById("search-results");
+redirectPlushiesPage.addEventListener("click", () =>  window.location.href = "plushies.html");
+
+const eyeglass = document.getElementsByClassName("search-button")[0];
+eyeglass.addEventListener("click", () => window.location.href = "plushies.html");
+
+const returnBunnyLogo = document.getElementById("menu-logo")
+returnBunnyLogo.addEventListener("click", () => window.location.href = "Home.html")
+
+//checks if the user pressed Enter.
+
+const searchResults = document.getElementById("search-results");
+const searchbox = document.getElementsByClassName("search-box")[0];
+searchbox.addEventListener("keyup", (event) => {
+  //event.preventDefault();
+  if(event.keyCode === 13 && searchResults.innerHTML.length > 0) {
+    window.location.href = "plushies.html";
+    }
+});
+
+
+function homePageButtons() {
+  //About us and Plushies Redirect / Event listeners home page
+  const aboutUsHome = document.getElementById("about-us-home") ;
+  aboutUsHome.addEventListener("click", () => window.location.href = "about.html");
+  const plushiesHome = document.getElementById("plushies-home");
+  plushiesHome.addEventListener("click", () => window.location.href = "plushies.html")
 }
+
+
 //back to top
 function scrollToTop() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
+  window.scrollTo({top: 0, behavior: "smooth"});
 }
 
 

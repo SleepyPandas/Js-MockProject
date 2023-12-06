@@ -137,6 +137,9 @@ p {
 
 a {
     text-decoration: none;
+    color: inherit;
+    width: inherit;
+    height: inherit;
 }
 
 
@@ -167,7 +170,7 @@ a {
     cursor: pointer;
 }
 
-.search-box {
+.search-box , #search-results  {
     padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -216,15 +219,36 @@ a {
     padding: 20px;
 }
 
+.homeButtons {
+    text-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+
+}
+
+#about-us-home:hover, #plushies-home:hover {
+    background-color: #47d4cf98;
+}
+
+#about-us-home, #plushies-home {
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 200px;
+    background-color: #47d4d0;
+}
+
+
+
+
 .single-column {
     flex: 1; 
     text-align:left; 
     flex-direction: column;
     margin: auto;
     padding: 20px;
-    align-items: end; 
     justify-content: left;
     padding: 50px 10% 150px 10%;
+    display: flex;
 }
 
 #mascot {
@@ -442,11 +466,11 @@ footer {
     background-color: #ffd6e0; 
 }
 
-#search-results {
+#search-results ,search-results-1 ,search-results-2 {
     position: absolute;
     top: 100%;
-    left: 0;
-    width: 100%;
+    left: 20%;
+    width: 60%;
     background-color: #fff; /* Set the background color to white */
     border: 1px solid #ccc; /* Add a border for a box effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a box shadow for a subtle elevation */
@@ -455,7 +479,19 @@ footer {
     text-align: center; /* Center the content */
 }
 
+#search-results:hover {
+    background-color: #00fff7;
+    display: block;
+}
+
+.search-results-selections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .search-box:focus + #search-results {
     display: block;
 }
+
 
